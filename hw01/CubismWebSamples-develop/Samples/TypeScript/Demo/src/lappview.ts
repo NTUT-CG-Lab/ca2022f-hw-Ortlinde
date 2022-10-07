@@ -128,40 +128,40 @@ export class LAppView {
 
     let imageName = '';
 
-    // 背景画像初期化
-    imageName = LAppDefine.BackImageName;
+    // // 背景画像初期化
+    // imageName = LAppDefine.BackImageName;
 
-    // 非同期なのでコールバック関数を作成
-    const initBackGroundTexture = (textureInfo: TextureInfo): void => {
-      const x: number = width * 0.5;
-      const y: number = height * 0.5;
+    // // 非同期なのでコールバック関数を作成
+    // const initBackGroundTexture = (textureInfo: TextureInfo): void => {
+    //   const x: number = width * 0.5;
+    //   const y: number = height * 0.5;
 
-      const fwidth = textureInfo.width * 2.0;
-      const fheight = height * 0.95;
-      this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-    };
+    //   const fwidth = textureInfo.width * 2.0;
+    //   const fheight = height * 0.95;
+    //   this._back = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+    // };
 
-    textureManager.createTextureFromPngFile(
-      resourcesPath + imageName,
-      false,
-      initBackGroundTexture
-    );
+    // textureManager.createTextureFromPngFile(
+    //   resourcesPath + imageName,
+    //   false,
+    //   initBackGroundTexture
+    // );
 
-    // 歯車画像初期化
-    imageName = LAppDefine.GearImageName;
-    const initGearTexture = (textureInfo: TextureInfo): void => {
-      const x = width - textureInfo.width * 0.5;
-      const y = height - textureInfo.height * 0.5;
-      const fwidth = textureInfo.width;
-      const fheight = textureInfo.height;
-      this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
-    };
+    // // 歯車画像初期化
+    // imageName = LAppDefine.GearImageName;
+    // const initGearTexture = (textureInfo: TextureInfo): void => {
+    //   const x = width - textureInfo.width * 0.5;
+    //   const y = height - textureInfo.height * 0.5;
+    //   const fwidth = textureInfo.width;
+    //   const fheight = textureInfo.height;
+    //   this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+    // };
 
-    textureManager.createTextureFromPngFile(
-      resourcesPath + imageName,
-      false,
-      initGearTexture
-    );
+    // textureManager.createTextureFromPngFile(
+    //   resourcesPath + imageName,
+    //   false,
+    //   initGearTexture
+    // );
 
     // シェーダーを作成
     if (this._programId == null) {
@@ -220,10 +220,10 @@ export class LAppView {
       }
       live2DManager.onTap(x, y);
 
-      // 歯車にタップしたか
-      if (this._gear.isHit(pointX, pointY)) {
-        live2DManager.nextScene();
-      }
+      // // 歯車にタップしたか
+      // if (this._gear.isHit(pointX, pointY)) {
+      //   live2DManager.nextScene();
+      // }
     }
   }
 
