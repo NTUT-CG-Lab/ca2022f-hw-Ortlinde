@@ -80,6 +80,8 @@
       <button id="right">右</button>
       <button id="plus">放大+</button>
       <button id="minus">縮小-</button>
+      <button id="stop">停下來</button>
+      <button id="ini">回原位</button>
       <div class="background-control">
         <h2>更換背景</h2>
         <div id="backgroundDrag">拖放背景圖片</div>
@@ -100,7 +102,7 @@
 
       // dont override
       window.addEventListener("load", () => {
-        update(0.45, 0, 1);
+        update(0.5, 0, 1);
       });
 
       /*
@@ -130,6 +132,14 @@
       document.querySelector("#minus").addEventListener("click", (e) => {
         scale -= 0.1;
         el.style.transform = `scale(${scale})`;
+      });
+      document.querySelector("#stop").addEventListener("click", (e) => {
+        window.clearInterval(intervalID);
+        // 跑太久會卡爛
+      });
+      document.querySelector("#ini").addEventListener("click", (e) => {
+        window.update(0.5, 0, 1);
+        // 現在只能按一次，之後沒有反應
       });
 
       let backgroundDragEL = document.querySelector("#backgroundDrag");
@@ -161,6 +171,21 @@
         }
         // alert("TODO background file change");
       });
+
+      // Strong baseline
+      let ax = 0.5;
+      let ay = 0;
+      let ascale = 1;
+
+      var intervalID = window.setInterval(() => {
+        if(ax < 1.5){
+          ax  = ax + 0.05;
+        }
+        else{
+          ax = 0.5;
+        }
+        update(ax,ay,ascale);
+      },100);
     </script>
   </body>
 </html>
