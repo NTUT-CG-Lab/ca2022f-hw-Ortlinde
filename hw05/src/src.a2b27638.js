@@ -97438,7 +97438,7 @@ class Camera {
         view.eyeROpen = 1;
       }
       /*嘴巴控制*/
-      view.MouthOpenY = 
+      //view.MouthOpenY = (faces[0].keypoints[].y)
     });
   }
 }
