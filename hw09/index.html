@@ -195,7 +195,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h1>作業 01</h1>
+      <h1>作業 09</h1>
     </div>
   </div>
 
@@ -203,13 +203,20 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       作業程式碼，請放在 src 檔案夾。
+      <input type="button" name="back" onclick="parent.location='https://github.com/NTUT-CG-Lab/ca2022f-hw-Ortlinde/tree/main/hw09'" value="要我把5年前的えっちゃん找出來騙人的吧">
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。
+      這個BX的兜帽有設定骨架，是能往後拉的，只是自動綁骨的話可能就沒了。<br>
+      老實說這BX從哪邊搞來的有點忘了，有另一隻體操服的能從ニコ找到就是了，不是畫面上這隻。<br>
+      ニコ上有的那隻當初是想拿去Blender把劍拆下來的，畢竟誰沒事走路拿劍嘛。<br>
+      所以放另一隻榮進閃耀上去了，雖然資料夾和文件平全都亂碼笑死。<br>
+      裡面還有送一個體操服版本的，不過我只丟了決勝服的。<br><br>
+      因為袖子太長而有大機率穿模的速子小姐.jpg<br>
+      <img width="600px" src="./src/tachyon.png"/>
     </div>
   </div>
 
@@ -224,40 +231,25 @@
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td rowspan="4" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>1</td>
-          <td>描述</td>
+          <td>將 MMD4Mecanim 匯入至 Unity</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>1</td>
-          <td>描述</td>
+          <td>將 MMD 模型跟材質拉進去 Unity</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>1</td>
-          <td>描述</td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>4</td>
+          <td>將壓縮檔內的MMD模型(PMX格式)轉換為FBX格式</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
-          <td id='m4'>1</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked" ></td>
-          <td id='m5'>2</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked" /></td>
-          <td id='m6'>2</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox7" checked="checked" /></td>
-          <td id='m7'>2</td>
-          <td>描述</td>
+          <td id='m4'>4</td>
+          <td>新增其他MMD模型進行轉檔</td>
         </tr>
       </table>
     </div>
@@ -267,7 +259,7 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="./video/MMD2Unity_Trans.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -288,9 +280,6 @@
   d3.select("#myCheckbox2").on("change",update);
   d3.select("#myCheckbox3").on("change",update);
   d3.select("#myCheckbox4").on("change",update);
-  d3.select("#myCheckbox5").on("change",update);
-  d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -312,18 +301,6 @@
 
     if (d3.select("#myCheckbox4").property("checked")){
       score += parseInt(d3.select('#m4').html());   
-    }
-
-    if (d3.select("#myCheckbox5").property("checked")){
-      score += parseInt(d3.select('#m5').html());   
-    }
-
-    if (d3.select("#myCheckbox6").property("checked")){
-      score += parseInt(d3.select('#m6').html());   
-    }
-
-    if (d3.select("#myCheckbox7").property("checked")){
-      score += parseInt(d3.select('#m7').html());   
     }
 
     d3.select("#myTotal").html(score);    
