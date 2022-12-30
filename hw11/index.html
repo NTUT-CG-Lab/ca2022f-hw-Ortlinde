@@ -195,7 +195,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h1>作業 01</h1>
+      <h1>作業 11</h1>
     </div>
   </div>
 
@@ -203,13 +203,17 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       作業程式碼，請放在 src 檔案夾。
+      <input type="button" name="back" onclick="parent.location='https://github.com/NTUT-CG-Lab/ca2022f-hw-Ortlinde/tree/main/hw11/src'" value="真不愧是闇影大人！">
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。心得報告 100 字。
+      其實說，自動眨眼這個，Add Compontment加一加就解決了，還解決了瞬間閉眼和定時眨眼的不自然感。<br>
+      一開始是發現：怎麼這人只會左右看，頭不會上下移動的；然後懷疑自己哪裡設定錯了。<br>
+      改去了Y改去了Z發現沒啥效果。<br>
+      最後發現：喔，我人和攝影機都擺在Y=1，要看只會低頭看。
     </div>
   </div>
 
@@ -224,40 +228,25 @@
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>1</td>
-          <td>描述</td>
+          <td rowspan="4" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
+          <td id='m1'>2</td>
+          <td>安裝Cubism Unity SDK</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>1</td>
-          <td>描述</td>
+          <td id='m2'>2</td>
+          <td>匯入Live2D模型</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>1</td>
-          <td>描述</td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>3</td>
+          <td>讓角色能夠看著滑鼠</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
-          <td id='m4'>1</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked" ></td>
-          <td id='m5'>2</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked" /></td>
-          <td id='m6'>2</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox7" checked="checked" /></td>
-          <td id='m7'>2</td>
-          <td>描述</td>
+          <td id='m4'>3</td>
+          <td>用腳本讓角色能週期性眨眼</td>
         </tr>
       </table>
     </div>
@@ -267,7 +256,7 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="./video/Cubism2Unity_Mouse.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -288,9 +277,6 @@
   d3.select("#myCheckbox2").on("change",update);
   d3.select("#myCheckbox3").on("change",update);
   d3.select("#myCheckbox4").on("change",update);
-  d3.select("#myCheckbox5").on("change",update);
-  d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -312,18 +298,6 @@
 
     if (d3.select("#myCheckbox4").property("checked")){
       score += parseInt(d3.select('#m4').html());   
-    }
-
-    if (d3.select("#myCheckbox5").property("checked")){
-      score += parseInt(d3.select('#m5').html());   
-    }
-
-    if (d3.select("#myCheckbox6").property("checked")){
-      score += parseInt(d3.select('#m6').html());   
-    }
-
-    if (d3.select("#myCheckbox7").property("checked")){
-      score += parseInt(d3.select('#m7').html());   
     }
 
     d3.select("#myTotal").html(score);    
